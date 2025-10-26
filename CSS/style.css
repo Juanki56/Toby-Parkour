@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(45deg, #fde7f0, #e6e3ff);
+  color: #444;
+}
+
+.header-box {
+  background: white;
+  padding: 15px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-box h1 { margin: 0; font-size: 24px; color: #333; }
+.header-box p { margin: 5px 0 0 0; color: #777; }
+
+#game-container {
+  width: 800px;
+  height: 360px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* --- ESTILOS PARA LAS PANTALLAS DE VICTORIA Y DERROTA --- */
+
+.win-overlay {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); z-index: 100;
+}
+
+.win-screen-full {
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(252, 228, 236, 0.9), rgba(235, 228, 252, 0.9));
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+
+.win-content {
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; text-align: center; z-index: 5;
+}
+
+/* --- ESTILOS PANTALLA VICTORIA NIVEL 1 --- */
+.win-meme-image-container { margin-bottom: 15px; }
+.win-meme-image-container img { height: 180px; width: auto; filter: drop-shadow(0 5px 15px rgba(0,0,0,0.25)); }
+.win-meme-text {
+  font-size: 32px; font-weight: bold; color: #4a148c; line-height: 1.4;
+  margin-bottom: 30px; padding: 0 20px; max-width: 500px;
+  text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+
+/* --- ESTILOS PANTALLA VICTORIA NIVEL 2 --- */
+.level2-win { background: linear-gradient(180deg, rgba(225, 245, 254, 0.9), rgba(224, 242, 241, 0.9)); }
+.win-content-level2 { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; z-index: 5; gap: 20px; }
+.character-duo { display: flex; align-items: flex-end; justify-content: center; gap: 20px; }
+.character-container { position: relative; }
+.win-char-img { filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); }
+.dog-img { height: 120px; }
+.charming-img { height: 200px; }
+.dog-message {
+  position: absolute; top: -55px; left: 50%; transform: translateX(-50%);
+  background: white; padding: 8px 15px; border-radius: 12px; font-size: 15px;
+  font-weight: bold; color: #333; width: 180px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.dog-message::after {
+  content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%);
+  border-width: 8px; border-style: solid; border-color: white transparent transparent transparent;
+}
+.dog-hearts { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 100px; }
+.dog-heart { position: absolute; font-size: 18px; animation: beat 1s infinite; }
+.dog-heart.h1 { left: 10px; top: 0; }
+.dog-heart.h2 { left: 40px; top: -10px; animation-delay: 0.2s; }
+.dog-heart.h3 { left: 70px; top: 0; animation-delay: 0.4s; }
+
+/* --- ESTILOS CORREGIDOS PANTALLA VICTORIA NIVEL 3 --- */
+.final-win { background: linear-gradient(180deg, rgba(255, 205, 210, 0.9), rgba(209, 196, 233, 0.9)); }
+.final-win-content { justify-content: space-between; padding: 20px 0; }
+.final-characters { display: flex; align-items: flex-end; justify-content: center; gap: 10px; width: 100%; }
+.final-char-img { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.2)); }
+.nina-final { height: 90px; }
+.dog-final { height: 110px; }
+.charming-final { height: 180px; }
+.bigotes-final { height: 90px; }
+.final-win-text {
+  font-size: 22px; font-weight: bold; color: #4a148c; line-height: 1.5;
+  padding: 0 40px; max-width: 650px; text-shadow: 0 2px 4px rgba(255,255,255,0.5);
+}
+.final-win-text span { font-size: 18px; color: #6a1b9a; display: block; margin-top: 8px; word-break: break-all; }
+
+/* Pantalla de derrota */
+.win-card {
+  background: white; padding: 30px 40px; border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15); text-align: center;
+}
+.win-title { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 20px; max-width: 300px; line-height: 1.4; }
+
+/* Botón general */
+.btn {
+  background: linear-gradient(45deg, #ff80ab, #ff4081); color: white;
+  border: none; padding: 12px 28px; border-radius: 50px;
+  font-family: 'Quicksand', sans-serif; font-size: 18px; font-weight: bold;
+  cursor: pointer; transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 64, 129, 0.6); }
+
+/* Lluvia de partículas */
+.particles-rain { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+.win-particle { position: absolute; top: -50px; animation: fall linear infinite; will-change: transform; }
+
+@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+@keyframes beat { 50% { transform: scale(1.2); } }
