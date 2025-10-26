@@ -180,7 +180,7 @@ function triggerWin() {
       <div class="win-screen-full">
         <div class="win-content">
             <div class="win-meme-image-container">
-              <img src="../IMG/encantador.png" alt="Encantador">
+              <img src="/IMG/encantador.png" alt="Encantador">
             </div>
             <div class="win-meme-text">${message}</div>
             <button class="btn" id="nextLevelBtn">${buttonText}</button>
