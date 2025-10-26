@@ -53,15 +53,15 @@ const levelData = {
 };
 
 function preload() {
-  tobyImg = loadImage('IMG/perrito.png');
-  encantadoraImg = loadImage('IMG/encantador.png');
-  ninaImg = loadImage('IMG/Nina.png');
-  bigotesImg = loadImage('IMG/Bigotes.png');
+  tobyImg = loadImage('/IMG/perrito.png');
+  encantadoraImg = loadImage('/IMG/encantador.png');
+  ninaImg = loadImage('/IMG/Nina.png');
+  bigotesImg = loadImage('/IMG/Bigotes.png');
   
   soundFormats('mp3', 'ogg');
-  jumpBarkSound = loadSound('AUDIO/Guau.mp3');
-  fallSound = loadSound('AUDIO/caida.mp3');
-  winSound = loadSound('AUDIO/Au.mp3');
+  jumpBarkSound = loadSound('/AUDIO/Guau.mp3');
+  fallSound = loadSound('/AUDIO/caida.mp3');
+  winSound = loadSound('/AUDIO/Au.mp3');
 }
 
 function setup() {
